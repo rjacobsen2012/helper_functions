@@ -1,5 +1,5 @@
 {
-    "name": "HelperFunctions",
+    "name": "HelperFunctions/helper_functions",
     "autoload": {
         "psr-0" : {
             "HelperFunctions\\helper_functions.php" : "src"
