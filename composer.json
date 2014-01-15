@@ -1,0 +1,14 @@
+{
+    "name": "HelperFunctions",
+    "autoload": {
+        "psr-0" : {
+            "HelperFunctions\\helper_functions.php" : "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rjacobsen2012/helper_functions.git"
+        }
+    ]
+}
