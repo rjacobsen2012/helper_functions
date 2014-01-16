@@ -1,9 +1,9 @@
 {
     "name": "helper-functions/helper_functions",
     "autoload": {
-        "psr-0" : {
-            "helper-functions\\helper_functions.php" : "src"
-        }
+        "files": [
+            "helper-functions\\helper_functions.php"
+        ]
     },
     "repositories": [
         {
