@@ -2,7 +2,7 @@
     "name": "helper-functions/helper_functions",
     "autoload": {
         "files": [
-            "helper-functions/helper_functions.php"
+            "helper_functions.php"
         ]
     },
     "repositories": [
