@@ -111,3 +111,57 @@ if(!function_exists('create_zip')){
         }
     }
 }
+
+if(!function_exists('create_temp_csv')){
+    /**
+     * create_temp_csv 
+     * 
+     * This method creates a temporary csv for email
+     * 
+     * @param mixed $csvdata
+     * @access public
+     * @return void
+     */
+    function create_temp_csv($csvdata){
+        if(!$fp = fopen('php://temp', 'w+')) return false;
+        foreach($csvdata as $line) fputcsv($fp, $line);
+        rewind($fp);
+        return stream_get_contents($fp);
+    }
+}
+
+if( ! function_exists('createmsg'))
+{
+    /**
+     * createmsg 
+     * 
+     * This method can be called from anywhere in your code to log a string
+     * to a specific log file. It can alternatively be used as a way to
+     * show status of methods by passing different parameters.
+     * 
+     * @param mixed $logger 
+     * @param mixed $msg 
+     * @param mixed $log 
+     * @param mixed $datestamp 
+     * @param mixed $newline 
+     * @access public
+     * @return void
+     */
+    function createmsg($logger, $msg, $log=true, $datestamp=true, $newline=true)
+    {
+        if($log){
+            if($logger){
+                $logger->info($msg);
+            }
+        }
+        if($logger && $logger->show_echos){
+            if($newline && $datestamp){
+                echo date('m/d/Y h:i:s A').' '.$msg."\n";
+            } elseif($newline) {
+                echo $msg."\n";
+            } else {
+                echo $msg;
+            }
+        }
+    }
+}
