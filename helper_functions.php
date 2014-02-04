@@ -31,6 +31,30 @@ if ( ! function_exists('pp'))
     }
 }
 
+if ( ! function_exists('email_exception'))
+{
+    /**
+     * email_exception 
+     * 
+     * This method emails the exception
+     * 
+     * @param mixed $x 
+     * @param mixed $die 
+     * @param mixed $mail 
+     * @access public
+     * @return void
+     */
+    function email_exception($e, $email)
+    {
+        pp(array(
+            $e->getMessage(),
+            $e->getCode(),
+            $e->getLine(),
+            $e->getTrace()
+        ), false, $email);
+    }
+}
+
 if(!function_exists('objToArray')){
     /**
      * objToArray
