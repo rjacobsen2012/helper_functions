@@ -38,20 +38,30 @@ if ( ! function_exists('email_exception'))
      * 
      * This method emails the exception
      * 
-     * @param mixed $x 
-     * @param mixed $die 
-     * @param mixed $mail 
+     * @param resource $e
+     * @param string $email
+     * @param mixed $extra
      * @access public
      * @return void
      */
-    function email_exception($e, $email)
+    function email_exception($e, $email, $extra = null)
     {
-        pp(array(
-            $e->getMessage(),
-            $e->getCode(),
-            $e->getLine(),
-            $e->getTrace()
-        ), false, $email);
+        if($extra){
+            pp(array(
+                $extra,
+                $e->getMessage(),
+                $e->getCode(),
+                $e->getLine(),
+                $e->getTrace()
+            ), false, $email);
+        } else {
+            pp(array(
+                $e->getMessage(),
+                $e->getCode(),
+                $e->getLine(),
+                $e->getTrace()
+            ), false, $email);
+        }
     }
 }
 
