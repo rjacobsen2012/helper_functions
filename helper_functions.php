@@ -44,22 +44,16 @@ if ( ! function_exists('email_exception'))
      * @access public
      * @return void
      */
-    function email_exception($e, $email, $extra = null)
+    function email_exception($errors, $email, $extra = null)
     {
         if($extra){
             pp(array(
                 $extra,
-                $e->getMessage(),
-                $e->getCode(),
-                $e->getLine(),
-                $e->getTrace()
+                $errors
             ), false, $email);
         } else {
             pp(array(
-                $e->getMessage(),
-                $e->getCode(),
-                $e->getLine(),
-                $e->getTrace()
+                $errors
             ), false, $email);
         }
     }
