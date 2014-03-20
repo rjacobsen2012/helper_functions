@@ -1,0 +1,22 @@
+
+
+Code Coverage Report 
+  2014-03-20 16:02:05
+
+ Summary: 
+  Classes: 57.14% (4/7)
+  Methods: 17.39% (4/23)
+  Lines:   36.70% (98/267)
+
+ArrayValuesToKeys
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  5/  5)
+ConvertPhoneNumber
+  Methods: 100.00% ( 1/ 1)   Lines:  60.00% (  3/  5)
+ConvertState
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% ( 64/ 64)
+RemoveNamespaceFromClassName
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+SearchOperators
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  9/  9)
+\Composer\Autoload::ClassLoader
+  Methods:  25.00% ( 4/16)   Lines:   6.11% (  8/131)
