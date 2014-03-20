@@ -5,6 +5,11 @@
             "helper_functions.php"
         ]
     },
+    "require": {
+        "mockery/mockery": "dev-master",
+        "codeception/codeception": "1.6.*@dev",
+        "fzaninotto/faker": "1.4.*@dev"
+    },
     "repositories": [
         {
             "type": "vcs",
