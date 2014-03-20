@@ -1,18 +1,18 @@
 #helper_functions
----
+
 [![Latest Stable Version](https://poser.pugx.org/helper-functions/helper_functions/v/stable.png)](https://packagist.org/packages/helper-functions/helper_functions) [![Total Downloads](https://poser.pugx.org/helper-functions/helper_functions/downloads.png)](https://packagist.org/packages/helper-functions/helper_functions) [![Build Status](https://travis-ci.org/rjacobsen2012/helper_functions.svg?branch=master)](https://travis-ci.org/rjacobsen2012/helper_functions) [![Coverage Status](https://coveralls.io/repos/rjacobsen2012/helper_functions/badge.png)](https://coveralls.io/r/rjacobsen2012/helper_functions)
 
 Helper_functions is a PHP package with simple helper functions used in php to do a variety of things. The benefit is being able to transport these simple functions from one app to the next without having to recreate these functions to do everyday things we do in PHP.
 
 ##README Contents
----
+
 * [Installation](#install)
 	* [Requirements](#requirements)
 	* [Install With Composer](#install-composer)
 
 <a name="install"/>	
 ##Installation
----
+
 
 <a name="requirements"/>
 ###Requirements
