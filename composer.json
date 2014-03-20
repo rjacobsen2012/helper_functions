@@ -1,19 +1,43 @@
 {
     "name": "helper-functions/helper_functions",
+    "description": "A bunch of helper functions for any app you may have.",
+    "keywords":["helpers", "helper functions", "nifty little helpers"],
+    "homepage": "http://indatus.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard Jacobsen",
+            "homepage": "http://indatus.com/",
+            "email": "rjacobsen@indatus.com",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "files": [
             "helper_functions.php"
+        ],
+        "classmap": [
+            "src"
         ]
-    },
+    },    
     "require": {
-        "mockery/mockery": "dev-master",
+        "php": ">=5.4.0",
         "codeception/codeception": "1.6.*@dev",
-        "fzaninotto/faker": "1.4.*@dev"
+        "fzaninotto/faker": "1.4.*@dev",
+        "guzzle/guzzle": "3.8.1",
+        "doctrine/inflector": "1.0",
+        "patchwork/utf8": "1.1.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "satooshi/php-coveralls": "dev-master",
+        "hot/phpunit-runner": "dev-master"
     },
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/rjacobsen2012/helper_functions.git"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }

@@ -4,6 +4,7 @@ namespace PhpAmqpLib\Wire\IO;
 
 use PhpAmqpLib\Exception\AMQPRuntimeException;
 use PhpAmqpLib\Exception\AMQPTimeoutException;
+use PhpAmqpLib\Helper\MiscHelper;
 
 class StreamIO extends AbstractIO
 {
@@ -27,7 +28,8 @@ class StreamIO extends AbstractIO
             throw new AMQPRuntimeException("Error Connecting to server($errno): $errstr ");
         }
 
-        if(!stream_set_timeout($this->sock, $read_write_timeout)) {
+        list($sec, $usec) = MiscHelper::splitSecondsMicroseconds($read_write_timeout);
+        if(!stream_set_timeout($this->sock, $sec, $usec)) {
             throw new AMQPIOException("Timeout could not be set");
         }
 

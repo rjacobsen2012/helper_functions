@@ -30,7 +30,7 @@ Extensions that modify existing methods like `alternate exchanges` are also supp
 ```javascript
 {
   "require": {
-      "videlalvaro/php-amqplib": "v2.2.2"
+      "videlalvaro/php-amqplib": "2.2.*"
   }
 }
 ```
@@ -186,6 +186,10 @@ define('AMQP_PROTOCOL', '0.8');
 ```
 
 The default value is `'0.9.1'`.
+
+## Providing your own autoloader ##
+
+If for some reasone you don't want to use composer, then you need to have an autoloader in place fo the library classes. People have [reported](https://github.com/videlalvaro/php-amqplib/issues/61#issuecomment-37855050) to use this [autoloader](https://gist.github.com/jwage/221634) with success.
 
 ## Original README: ##
 
