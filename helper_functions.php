@@ -76,15 +76,11 @@ if(!function_exists('objToArray')){
             return $arr;
         }
 
-        foreach ($obj as $key => $value)
-        {
-            if (!empty($value))
-            {
+        foreach ($obj as $key => $value) {
+            if (!empty($value)) {
                 $arr[$key] = array();
                 objToArray($value, $arr[$key]);
-            }
-            else
-            {
+            } else {
                 $arr[$key] = $value;
             }
         }
@@ -179,10 +175,10 @@ if( ! function_exists('createmsg'))
     {
         if($log){
             if($logger){
-                $logger->info($msg);
+                $logger->addInfo($msg);
             }
         }
-        if($logger && $logger->show_echos){
+        if($logger && (!isset($logger->show_echos) || (isset($logger->show_echos) && $logger->show_echos))){
             if($newline && $datestamp){
                 echo date('m/d/Y h:i:s A').' '.$msg."\n";
             } elseif($newline) {
@@ -191,5 +187,255 @@ if( ! function_exists('createmsg'))
                 echo $msg;
             }
         }
+    }
+}
+
+if ( ! function_exists('convertPhoneNumber')) {
+    /**
+     * Strips everything except for digits in the phone number
+     *
+     * @param string $phone_number The pre-formatted phone number
+     *
+     * @return string The phone number stripped of everything except for digits
+     */
+    function convertPhoneNumber($phone_number)
+    {
+        //anything that's not 0-9 get replaced with an empty string
+        $phone_number = \preg_replace('/[^x0-9]/', '', $phone_number);
+
+        if (strlen($phone_number) == 11) {
+            $phone_number = substr($phone_number, 1);
+        }
+
+        return $phone_number;
+    }
+}
+
+if ( ! function_exists('remove_namespace_from_class_name')) {
+    /**
+     * There are instances where we want to get table names and attributes directly
+     * from the model name. Or load routes from controller class names. The namespace
+     * gets in the way in these cases, so this helper just strips off the namespace.
+     *
+     * @param Model $model The eloquent model is just passed by reference
+     *
+     * @return string The class name with namespaces stripped off
+     */
+    function remove_namespace_from_class_name($model)
+    {
+        $model_name = explode("\\", $model);
+
+        return end($model_name);
+    }
+}
+
+if ( ! function_exists('search_operators')) {
+    /**
+     * Function to return a list of DB operators for searching
+     *
+     * @return array Array of DB operators
+     */
+    function search_operators()
+    {
+        $opts = array();
+        $opts['=']      = 'Equal';
+        $opts['!=']     = 'Not equal';
+        $opts['<']      = 'Less than';
+        $opts['>']      = 'Greater than';
+        $opts['<=']     = 'Less than or equal to';
+        $opts['>=']     = 'Greater than or equal to';
+        $opts['LIKE']   = 'LIKE';
+
+        return $opts;
+    }
+}
+
+if ( ! function_exists('array_values_to_keys')) {
+    /**
+     * Function to take an array and return an associative array where the
+     * keys == values
+     *
+     * @param array $array
+     *
+     * @return array Multidimensional array with keys == values
+     */
+    function array_values_to_keys($array)
+    {
+        $result = array();
+        foreach ($array as $value) {
+            $result[$value] = $value;
+        }
+
+        return $result;
+    }
+}
+
+if ( ! function_exists('convert_state')) {
+    /**
+     * This function takes a state name and returns the 2 letter postal
+     * abbreviation. You can also pass in the postal code to return the
+     * state name.
+     *
+     * @param string $name State name or postal code
+     * @param string $to   What to convert to, either abbreviation or full name
+     *
+     * @return string
+     */
+    function convert_state($name, $to='abbrev')
+    {
+        $states = array(
+            array('name' =>'Alabama', 'abbrev'=>'AL'),
+            array('name' =>'Alaska', 'abbrev'=>'AK'),
+            array('name' =>'Arizona', 'abbrev'=>'AZ'),
+            array('name' =>'Arkansas', 'abbrev'=>'AR'),
+            array('name' =>'California', 'abbrev'=>'CA'),
+            array('name' =>'Colorado', 'abbrev'=>'CO'),
+            array('name' =>'Connecticut', 'abbrev'=>'CT'),
+            array('name' =>'Delaware', 'abbrev'=>'DE'),
+            array('name' =>'Florida', 'abbrev'=>'FL'),
+            array('name' =>'Georgia', 'abbrev'=>'GA'),
+            array('name' =>'Hawaii', 'abbrev'=>'HI'),
+            array('name' =>'Idaho', 'abbrev'=>'ID'),
+            array('name' =>'Illinois', 'abbrev'=>'IL'),
+            array('name' =>'Indiana', 'abbrev'=>'IN'),
+            array('name' =>'Iowa', 'abbrev'=>'IA'),
+            array('name' =>'Kansas', 'abbrev'=>'KS'),
+            array('name' =>'Kentucky', 'abbrev'=>'KY'),
+            array('name' =>'Louisiana', 'abbrev'=>'LA'),
+            array('name' =>'Maine', 'abbrev'=>'ME'),
+            array('name' =>'Maryland', 'abbrev'=>'MD'),
+            array('name' =>'Massachusetts', 'abbrev'=>'MA'),
+            array('name' =>'Michigan', 'abbrev'=>'MI'),
+            array('name' =>'Minnesota', 'abbrev'=>'MN'),
+            array('name' =>'Mississippi', 'abbrev'=>'MS'),
+            array('name' =>'Missouri', 'abbrev'=>'MO'),
+            array('name' =>'Montana', 'abbrev'=>'MT'),
+            array('name' =>'Nebraska', 'abbrev'=>'NE'),
+            array('name' =>'Nevada', 'abbrev'=>'NV'),
+            array('name' =>'New Hampshire', 'abbrev'=>'NH'),
+            array('name' =>'New Jersey', 'abbrev'=>'NJ'),
+            array('name' =>'New Mexico', 'abbrev'=>'NM'),
+            array('name' =>'New York', 'abbrev'=>'NY'),
+            array('name' =>'North Carolina', 'abbrev'=>'NC'),
+            array('name' =>'North Dakota', 'abbrev'=>'ND'),
+            array('name' =>'Ohio', 'abbrev'=>'OH'),
+            array('name' =>'Oklahoma', 'abbrev'=>'OK'),
+            array('name' =>'Oregon', 'abbrev'=>'OR'),
+            array('name' =>'Pennsylvania', 'abbrev'=>'PA'),
+            array('name' =>'Rhode Island', 'abbrev'=>'RI'),
+            array('name' =>'South Carolina', 'abbrev'=>'SC'),
+            array('name' =>'South Dakota', 'abbrev'=>'SD'),
+            array('name' =>'Tennessee', 'abbrev'=>'TN'),
+            array('name' =>'Texas', 'abbrev'=>'TX'),
+            array('name' =>'Utah', 'abbrev'=>'UT'),
+            array('name' =>'Vermont', 'abbrev'=>'VT'),
+            array('name' =>'Virginia', 'abbrev'=>'VA'),
+            array('name' =>'Washington', 'abbrev'=>'WA'),
+            array('name' =>'West Virginia', 'abbrev'=>'WV'),
+            array('name' =>'Wisconsin', 'abbrev'=>'WI'),
+            array('name' =>'Wyoming', 'abbrev'=>'WY')
+        );
+
+        $return = false;
+        foreach ($states as $state) {
+            if ($to == 'name') {
+                if (strtolower($state['abbrev']) == strtolower($name)) {
+                    $return = $state['name'];
+                    break;
+                }
+            } elseif ($to == 'abbrev') {
+                if (strtolower($state['name']) == strtolower($name)) {
+                    $return = strtoupper($state['abbrev']);
+                    break;
+                }
+            }
+        }
+        return $return;
+    }
+}
+
+if (!function_exists('timestamp')) {
+    /**
+     * Nicely formatted date/time as string
+     * @return string date/time
+     */
+    function timestamp()
+    {
+        return date("Y-m-d H:i:s");
+    }
+}
+
+/**
+ * Returns false if the value is null or empty.
+ * 
+ */
+if ( ! function_exists('null_or_empty')) {
+
+    /**
+     * Checks if the value is null or empty.  If it meets that criteria then return true.
+     * Otherwise return false.
+     */
+    function null_or_empty($value) {
+
+        if(! empty($value) && ! is_null($value)) {
+            return false;
+        }
+
+        return true;
+    }
+}
+
+/**
+ *  return_key_value_if_exists - checks if the array key exists, if it does return 
+ *  the value otherwise return null;
+ * 
+ */
+if(! function_exists('return_keys_value_if_exists'))
+{
+    function return_keys_value_if_exists($key, array $array_to_search)
+    {
+        if( array_key_exists($key, $array_to_search) ) {
+
+            return $array_to_search[$key];
+
+        } 
+
+        return null;
+       
+    }
+}
+
+/**
+ * Based on https://youtube.googleapis.com/v/zBaHBmZLDxY
+ * 
+ */
+if(! function_exists('sort_multi_array_by_key'))
+{
+    function sort_multi_array_by_key(array $array, $key, $order = SORT_ASC)
+    {   
+        //Loop through and get the values of our specified key
+        foreach($array as $v) {
+
+            $values_of_the_key[] = strtolower($v[$key]);
+        }
+
+        switch ($order) {
+            case SORT_ASC:
+                asort($values_of_the_key);
+                break;
+            case SORT_DESC:
+                arsort($values_of_the_key);
+                break;
+        }
+
+        //now that we have the values sorted properly, we
+        //have to put the sorted information on a new
+        //array
+        foreach($values_of_the_key as $k => $v) {
+
+            $sorted_array[] = $array[$k];
+        }
+        
+        return $sorted_array;
     }
 }
