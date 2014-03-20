@@ -1,5 +1,5 @@
 {
-    "name": "helper-functions/helper_functions",
+    "name": "php/helper_functions",
     "description": "A bunch of helper functions for any app you may have.",
     "keywords":["helpers", "helper functions", "nifty little helpers"],
     "homepage": "http://indatus.com/",

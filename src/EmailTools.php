@@ -1,21 +1,21 @@
 <?php
 
 /**
- * EmailExceptions 
- * 
- * @package 
+ * EmailTools
+ *
+ * @package
  * @version v1.0
  * @copyright 2013 Indatus
- * @author Richard Jacobsen <rjacobsen@indatus.com> 
+ * @author Richard Jacobsen <rjacobsen@indatus.com>
  * @license PHP Version 5.4 {@link https://www.archlinux.org/packages/extra/x86_64/php/}
  */
-class EmailExceptions
+class EmailTools
 {
     /**
-     * email_exception 
-     * 
+     * email_exception
+     *
      * This method emails the exception
-     * 
+     *
      * @static
      * @param resource $e
      * @param string $email

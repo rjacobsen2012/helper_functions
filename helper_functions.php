@@ -19,7 +19,7 @@ if ( ! function_exists('pp'))
      */
     function pp($x, $die=true, $mail=null)
     {
-        return PrePrintR::pp($x, $die, $mail);
+        return MiscTools::pp($x, $die, $mail);
     }
 }
 
@@ -37,7 +37,7 @@ if ( ! function_exists('email_exception'))
      */
     function email_exception($errors, $email, $extra = null)
     {
-        return EmailExceptions::email_exception($errors, $email, $extra);
+        return EmailTools::email_exception($errors, $email, $extra);
     }
 }
 
@@ -53,7 +53,7 @@ if(!function_exists('objToArray')){
      */
     function objToArray($obj, &$arr = array())
     {
-        return src\ObjectToArray::objToArray($obj, $arr);
+        return ObjectTools::objToArray($obj, $arr);
     }
 }
 
@@ -70,7 +70,7 @@ if(!function_exists('create_zip')){
      */
     function create_zip($files = array(), $destination = '', $overwrite = false)
     {
-        return CreateZip::create_zip($files, $destination, $overwrite);
+        return ZipTools::create_zip($files, $destination, $overwrite);
     }
 }
 
@@ -84,7 +84,7 @@ if(!function_exists('create_temp_csv')){
      * @return void
      */
     function create_temp_csv($csvdata){
-        return CreateTempCsv::create_temp_csv($csvdata);
+        return CsvTools::create_temp_csv($csvdata);
     }
 }
 
@@ -106,7 +106,7 @@ if( ! function_exists('createmsg'))
      */
     function createmsg($logger, $msg, $log=true, $datestamp=true, $newline=true)
     {
-        return CreateMsg::createmsg($logger, $msg, $log, $datestamp, $newline);
+        return MiscTools::createmsg($logger, $msg, $log, $datestamp, $newline);
     }
 }
 
@@ -120,7 +120,7 @@ if ( ! function_exists('convertPhoneNumber')) {
      */
     function convertPhoneNumber($phone_number)
     {
-        return ConvertPhoneNumber::convert($phone_number);
+        return MiscTools::convert($phone_number);
     }
 }
 
@@ -135,7 +135,7 @@ if ( ! function_exists('remove_namespace_from_class_name')) {
      */
     function remove_namespace_from_class_name($model)
     {
-        return RemoveNamespaceFromClassName::remove_namespace_from_class_name($model);
+        return MiscTools::remove_namespace_from_class_name($model);
     }
 }
 
@@ -147,7 +147,7 @@ if ( ! function_exists('search_operators')) {
      */
     function search_operators()
     {
-        return SearchOperators::search_operators();
+        return MiscTools::search_operators();
     }
 }
 
@@ -162,7 +162,7 @@ if ( ! function_exists('array_values_to_keys')) {
      */
     function array_values_to_keys($array)
     {
-        return ArrayValuesToKeys::array_values_to_keys($array);
+        return ArrayTools::array_values_to_keys($array);
     }
 }
 
@@ -179,7 +179,7 @@ if ( ! function_exists('convert_state')) {
      */
     function convert_state($name, $to='abbrev')
     {
-        return ConvertState::convert_state($name, $to);
+        return MiscTools::convert_state($name, $to);
     }
 }
 
@@ -191,7 +191,7 @@ if (!function_exists('timestamp')) {
      */
     function timestamp()
     {
-        return Timestamp::timestamp();
+        return MiscTools::timestamp();
     }
 }
 
@@ -209,7 +209,7 @@ if ( ! function_exists('null_or_empty')) {
      * @return boolean
      */
     function null_or_empty($value) {
-        return NullOrEmpty::null_or_empty($value);
+        return MiscTools::null_or_empty($value);
     }
 }
 
@@ -225,7 +225,7 @@ if(! function_exists('return_keys_value_if_exists'))
     */
     function return_keys_value_if_exists($key, array $array_to_search)
     {
-        return ReturnKeysValueIfExists::return_keys_value_if_exists($key, $array_to_search);
+        return ArrayTools::return_keys_value_if_exists($key, $array_to_search);
     }
 }
 
@@ -243,6 +243,6 @@ if(! function_exists('sort_multi_array_by_key'))
      */
     function sort_multi_array_by_key(array $array, $key, $order = SORT_ASC)
     {   
-        return SortMultiArrayByKey::sort_multi_array_by_key($array, $key, $order);
+        return ArrayTools::sort_multi_array_by_key($array, $key, $order);
     }
 }
