@@ -4,7 +4,7 @@
 
 Helper_functions is a PHP package with simple helper functions used in php to do a variety of things. The benefit is being able to transport these simple functions from one app to the next without having to recreate these functions to do everyday things we do in PHP.
 
-##README Contects
+##README Contents
 ---
 * [Installation](#install)
 	* [Requirements](#requirements)
