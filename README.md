@@ -114,12 +114,14 @@ Then run `composer dumpautoload` to load the classes.
 	
 	If you fill the $datestamp, there will be a timestamp in front of your message.
 	
-	If the $newline is set to true, it will add a line break at the end of the message.
+	If the $newline is set to true, it will add a line break at the end of the 
+	message.
 
 	returns void
 
 ####convert_state($name, $to)
-	This function takes a state name and returns the 2 letter postal abbreviation. You can also pass in the postal code to return the state name.
+	This function takes a state name and returns the 2 letter postal abbreviation. 
+	You can also pass in the postal code to return the state name.
 
 	returns string
 
