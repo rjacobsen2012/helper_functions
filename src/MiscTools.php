@@ -235,7 +235,7 @@ class MiscTools
      *
      * @return string The phone number stripped of everything except for digits
      */
-    public static function convert($phone_number)
+    public static function convertPhoneNumber($phone_number)
     {
         //anything that's not 0-9 get replaced with an empty string
         $phone_number = \preg_replace('/[^x0-9]/', '', $phone_number);

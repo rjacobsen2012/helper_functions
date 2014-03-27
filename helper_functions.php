@@ -19,7 +19,7 @@ if ( ! function_exists('pp'))
      */
     function pp($x, $die=true, $mail=null)
     {
-        return MiscTools::pp($x, $die, $mail);
+        return HelperInterface::pp($x, $die, $mail);
     }
 }
 
@@ -37,7 +37,7 @@ if ( ! function_exists('email_exception'))
      */
     function email_exception($errors, $email, $extra = null)
     {
-        return EmailTools::email_exception($errors, $email, $extra);
+        return HelperInterface::email_exception($errors, $email, $extra);
     }
 }
 
@@ -49,11 +49,11 @@ if(!function_exists('objToArray')){
      * 
      * @param object $obj
      * @param array $arr
-     * @return void
+     * @return array
      */
     function objToArray($obj, &$arr = array())
     {
-        return ObjectTools::objToArray($obj, $arr);
+        return HelperInterface::objToArray($obj, $arr);
     }
 }
 
@@ -70,7 +70,7 @@ if(!function_exists('create_zip')){
      */
     function create_zip($files = array(), $destination = '', $overwrite = false)
     {
-        return ZipTools::create_zip($files, $destination, $overwrite);
+        return HelperInterface::create_zip($files, $destination, $overwrite);
     }
 }
 
@@ -84,7 +84,7 @@ if(!function_exists('create_temp_csv')){
      * @return void
      */
     function create_temp_csv($csvdata){
-        return CsvTools::create_temp_csv($csvdata);
+        return HelperInterface::create_temp_csv($csvdata);
     }
 }
 
@@ -106,7 +106,7 @@ if( ! function_exists('createmsg'))
      */
     function createmsg($logger, $msg, $log=true, $datestamp=true, $newline=true)
     {
-        return MiscTools::createmsg($logger, $msg, $log, $datestamp, $newline);
+        return HelperInterface::createmsg($logger, $msg, $log, $datestamp, $newline);
     }
 }
 
@@ -120,7 +120,7 @@ if ( ! function_exists('convertPhoneNumber')) {
      */
     function convertPhoneNumber($phone_number)
     {
-        return MiscTools::convert($phone_number);
+        return HelperInterface::convert($phone_number);
     }
 }
 
@@ -135,7 +135,7 @@ if ( ! function_exists('remove_namespace_from_class_name')) {
      */
     function remove_namespace_from_class_name($model)
     {
-        return MiscTools::remove_namespace_from_class_name($model);
+        return HelperInterface::remove_namespace_from_class_name($model);
     }
 }
 
@@ -147,7 +147,7 @@ if ( ! function_exists('search_operators')) {
      */
     function search_operators()
     {
-        return MiscTools::search_operators();
+        return HelperInterface::search_operators();
     }
 }
 
@@ -162,7 +162,7 @@ if ( ! function_exists('array_values_to_keys')) {
      */
     function array_values_to_keys($array)
     {
-        return ArrayTools::array_values_to_keys($array);
+        return HelperInterface::array_values_to_keys($array);
     }
 }
 
@@ -179,7 +179,7 @@ if ( ! function_exists('convert_state')) {
      */
     function convert_state($name, $to='abbrev')
     {
-        return MiscTools::convert_state($name, $to);
+        return HelperInterface::convert_state($name, $to);
     }
 }
 
@@ -191,7 +191,7 @@ if (!function_exists('timestamp')) {
      */
     function timestamp()
     {
-        return MiscTools::timestamp();
+        return HelperInterface::timestamp();
     }
 }
 
@@ -209,7 +209,7 @@ if ( ! function_exists('null_or_empty')) {
      * @return boolean
      */
     function null_or_empty($value) {
-        return MiscTools::null_or_empty($value);
+        return HelperInterface::null_or_empty($value);
     }
 }
 
@@ -225,7 +225,7 @@ if(! function_exists('return_keys_value_if_exists'))
     */
     function return_keys_value_if_exists($key, array $array_to_search)
     {
-        return ArrayTools::return_keys_value_if_exists($key, $array_to_search);
+        return HelperInterface::return_keys_value_if_exists($key, $array_to_search);
     }
 }
 
@@ -243,6 +243,25 @@ if(! function_exists('sort_multi_array_by_key'))
      */
     function sort_multi_array_by_key(array $array, $key, $order = SORT_ASC)
     {   
-        return ArrayTools::sort_multi_array_by_key($array, $key, $order);
+        return HelperInterface::sort_multi_array_by_key($array, $key, $order);
+    }
+}
+
+if(! function_exists('objToArray'))
+{
+    /**
+     * objToArray
+     *
+     * This method with convert objects to arrays
+     *
+     * @static
+     * @param object $obj
+     * @param array $arr
+     * @access public
+     * @return array
+     */
+    function objToArray($obj, &$arr = array())
+    {
+        return HelperInterface::objToArray($obj, $arr);
     }
 }

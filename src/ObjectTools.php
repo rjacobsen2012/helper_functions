@@ -20,7 +20,7 @@ class ObjectTools
      * @param object $obj
      * @param array $arr
      * @access public
-     * @return void
+     * @return array
      */
     public static function objToArray($obj, &$arr = array())
     {
