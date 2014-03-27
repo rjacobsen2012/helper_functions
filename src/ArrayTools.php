@@ -32,6 +32,24 @@ class ArrayTools
     }
 
     /**
+     * Function to compare 2 arrays to see if they match
+     * keys == values
+     *
+     * @static
+     * @access public
+     * @param array $array1
+     * @param array $array2
+     */
+    public static function array_compare($array1, $array2)
+    {
+        if(array_diff($array1, $array2) || array_diff($array2, $array1)){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
      *  return_key_value_if_exists - checks if the array key exists, if it does return
      *  the value otherwise return null;
      *
