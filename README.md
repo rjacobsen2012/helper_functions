@@ -36,94 +36,92 @@ Then run `composer dumpautoload` to load the classes.
 <a name="methods">
 ##Methods Included
 
-###array_values_to_keys($array)
-This method takes an array, and returns an associative array where the keys are now what were the values.
+####array_values_to_keys($array)
+	This method takes an array, and returns an associative array where the keys are now what were the values.
 
-returns an array
---
-###array_compare($array1, $array2)
-Function to compare 2 arrays to see if they match.
+	returns an array
 
-returns true if they match, false if they do not
---
-###return_keys_value_if_exists($key, $array_to_search)
-Checks if the array key exists.
+####array_compare($array1, $array2)
+	Function to compare 2 arrays to see if they match.
 
-returns the value if the key exists, or returns null
---
-###sort_multi_array_by_key($array, $key, $order)
-Sorts the Multidimensional array by the keys.
+	returns true if they match, false if they do not
 
-returns array
---
-###create_temp_csv($csvdata)
-This method creates a temporary csv for email.
+####return_keys_value_if_exists($key, $array_to_search)
+	Checks if the array key exists.
 
-returns the contents of the csv
---
-###email_exception($errors, $email, $extra)
-This method emails the exception that was thrown to the email provided, along
-with whatever you put in the $extra value.
+	returns the value if the key exists, or returns null
 
-returns void
---
-###pp($x, $die, $mail)
-This method was added to display array and objects clearer. Call this command anywhere in your code by pp($testdata). This command does the same thing as the php print_r method, but with <pre></pre> tags around the result.
+####sort_multi_array_by_key($array, $key, $order)
+	Sorts the Multidimensional array by the keys.
 
-Setting the $die to true will kill the process when the method is called.
+	returns array
 
-The $mail option, if filled with an email address, will send an email to the email with the result of the method. This is helpfull when trying to debug code you cannot display the output from.
+####create_temp_csv($csvdata)
+	This method creates a temporary csv for email.
 
-returns void
---
-###timestamp()
-This simply returns the current timestamp formatted for a database.
+	returns the contents of the csv
 
-returns string
---
-###remove_namespace_from_class_name($model)
-There are instances where we want to get table names and attributes directly from the model name, or load routes from controller class names. The namespace gets in the way in these cases, so this helper just strips off the namespace.
+####email_exception($errors, $email, $extra)
+	This method emails the exception that was thrown to the email provided, along with whatever you put in the $extra value.
 
-returns string
---
-###null_or_empty($value)
-Checks if the value is null or empty.
+	returns void
 
-returns true if the $value is empty, false if the $value is not empty and not null.
---
-###search_operators()
-Function to return a list of DB operators for searching.
+####pp($x, $die, $mail)
+	This method was added to display array and objects clearer. Call this command anywhere in your code by pp($testdata). This command does the same thing as the php print_r method, but with <pre></pre> tags around the result.
+	
+	Setting the $die to true will kill the process when the method is called.
+	
+	The $mail option, if filled with an email address, will send an email to the email with the result of the method. This is helpfull when trying to debug code you cannot display the output from.
+	
+	returns void
 
-returns array
---
-###createmsg($logger, $msg, $log, $datestamp, $newline)
-This method can be called from anywhere in your code to log a string to a specific log file. It can alternatively be used as a way to show status of methods by passing different parameters.
+####timestamp()
+	This simply returns the current timestamp formatted for a database.
 
-If you want to log the message, simply set the $log to true. The $logger must be an instance of Logger, or null. If $logger is null, nothing will be logged.
+	returns string
 
-If you fill the $datestamp, there will be a timestamp in front of your message.
+####remove_namespace_from_class_name($model)
+	There are instances where we want to get table names and attributes directly from the model name, or load routes from controller class names. The namespace gets in the way in these cases, so this helper just strips off the namespace.
 
-If the $newline is set to true, it will add a line break at the end of the message.
+	returns string
 
-returns void
---
-###convert_state($name, $to)
-This function takes a state name and returns the 2 letter postal abbreviation. You can also pass in the postal code to return the state name.
+####null_or_empty($value)
+	Checks if the value is null or empty.
 
-returns string
---
-###convertPhoneNumber($phone_number)
-Strips everything except for digits in the phone number.
+	returns true if the $value is empty, false if the $value is not empty and not null.
 
-returns string
---
-###objToArray($obj, $arr)
-This method will convert objects to arrays.
+####search_operators()
+	Function to return a list of DB operators for searching.
 
-returns array
---
-###create_zip($files, $destination, $overwrite)
-Creates a compressed zip file from the files passed, and if the $destination is set, writes the files to the $destination. If the $overwrite value is true, this will overwrite the current file.
+	returns array
 
-returns false - if no $files were passed, if the $destination does not exists, or if the $overwrite option is set to false and the file exists already - or returns string containing the file location
---
+####createmsg($logger, $msg, $log, $datestamp, $newline)
+	This method can be called from anywhere in your code to log a string to a specific log file. It can alternatively be used as a way to show status of methods by passing different parameters.
+	
+	If you want to log the message, simply set the $log to true. The $logger must be an instance of Logger, or null. If $logger is null, nothing will be logged.
+	
+	If you fill the $datestamp, there will be a timestamp in front of your message.
+	
+	If the $newline is set to true, it will add a line break at the end of the message.
+
+	returns void
+
+####convert_state($name, $to)
+	This function takes a state name and returns the 2 letter postal abbreviation. You can also pass in the postal code to return the state name.
+
+	returns string
+
+####convertPhoneNumber($phone_number)
+	Strips everything except for digits in the phone number.
+
+	returns string
+
+####objToArray($obj, $arr)
+	This method will convert objects to arrays.
+
+	returns array
+
+####create_zip($files, $destination, $overwrite)
+	Creates a compressed zip file from the files passed, and if the $destination is set, writes the files to the $destination. If the $overwrite value is true, this will overwrite the current file.
+
+	returns false - if no $files were passed, if the $destination does not exists, or if the $overwrite option is set to false and the file exists already - or returns string containing the file location
