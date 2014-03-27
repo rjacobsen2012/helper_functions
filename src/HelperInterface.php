@@ -21,7 +21,7 @@ interface HelperInterface
      *
      * @return array Multidimensional array with keys == values
      */
-    public static function array_values_to_keys($array);
+    public function array_values_to_keys($array);
 
     /**
      * Function to compare 2 arrays to see if they match
@@ -32,7 +32,7 @@ interface HelperInterface
      * @param array $array1
      * @param array $array2
      */
-    public static function array_compare($array1, $array2);
+    public function array_compare($array1, $array2);
 
     /**
      *  return_key_value_if_exists - checks if the array key exists, if it does return
@@ -44,7 +44,7 @@ interface HelperInterface
      * @access public
      * @return mixed
      */
-    public static function return_keys_value_if_exists($key, array $array_to_search);
+    public function return_keys_value_if_exists($key, array $array_to_search);
 
     /**
      * @static
@@ -54,7 +54,7 @@ interface HelperInterface
      * @param type $order
      * @return array
      */
-    public static function sort_multi_array_by_key(array $array, $key, $order = SORT_ASC);
+    public function sort_multi_array_by_key(array $array, $key, $order = SORT_ASC);
 
     /**
      * create_temp_csv
@@ -66,7 +66,7 @@ interface HelperInterface
      * @access public
      * @return void
      */
-    public static function create_temp_csv($csvdata);
+    public function create_temp_csv($csvdata);
 
     /**
      * email_exception
@@ -80,7 +80,7 @@ interface HelperInterface
      * @access public
      * @return void
      */
-    public static function email_exception($errors, $email, $extra = null);
+    public function email_exception($errors, $email, $extra = null);
 
     /**
      * pp
@@ -99,7 +99,7 @@ interface HelperInterface
      * @access public
      * @return void
      */
-    public static function pp($x, $die=true, $mail=null);
+    public function pp($x, $die=true, $mail=null);
 
     /**
      * Nicely formatted date/time as string
@@ -108,7 +108,7 @@ interface HelperInterface
      * @access public
      * @return string date/time
      */
-    public static function timestamp();
+    public function timestamp();
 
     /**
      * There are instances where we want to get table names and attributes directly
@@ -120,7 +120,7 @@ interface HelperInterface
      * @access public
      * @return string The class name with namespaces stripped off
      */
-    public static function remove_namespace_from_class_name($model);
+    public function remove_namespace_from_class_name($model);
 
     /**
      * Checks if the value is null or empty.  If it meets that criteria then return true.
@@ -131,7 +131,7 @@ interface HelperInterface
      * @access public
      * @return boolean
      */
-    public static function null_or_empty($value);
+    public function null_or_empty($value);
 
     /**
      * Function to return a list of DB operators for searching
@@ -140,7 +140,7 @@ interface HelperInterface
      * @access public
      * @return array Array of DB operators
      */
-    public static function search_operators();
+    public function search_operators();
 
     /**
      * createmsg
@@ -158,7 +158,7 @@ interface HelperInterface
      * @access public
      * @return void
      */
-    public static function createmsg($logger, $msg, $log=true, $datestamp=true, $newline=true);
+    public function createmsg($logger, $msg, $log=true, $datestamp=true, $newline=true);
 
     /**
      * This function takes a state name and returns the 2 letter postal
@@ -172,7 +172,7 @@ interface HelperInterface
      *
      * @return string
      */
-    public static function convert_state($name, $to='abbrev');
+    public function convert_state($name, $to='abbrev');
 
     /**
      * Strips everything except for digits in the phone number
@@ -183,7 +183,7 @@ interface HelperInterface
      *
      * @return string The phone number stripped of everything except for digits
      */
-    public static function convertPhoneNumber($phone_number);
+    public function convertPhoneNumber($phone_number);
 
     /**
      * objToArray
@@ -196,7 +196,7 @@ interface HelperInterface
      * @access public
      * @return array
      */
-    public static function objToArray($obj, &$arr = array());
+    public function objToArray($obj, &$arr = array());
 
     /**
      * Thanks to http://davidwalsh.name/create-zip-php
@@ -210,5 +210,5 @@ interface HelperInterface
      * @param boolean $overwrite
      * @return mixed
      */
-    public static function create_zip($files = array(), $destination = '', $overwrite = false);
+    public function create_zip($files = array(), $destination = '', $overwrite = false);
 }

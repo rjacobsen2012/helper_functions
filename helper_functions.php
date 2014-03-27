@@ -19,7 +19,8 @@ if ( ! function_exists('pp'))
      */
     function pp($x, $die=true, $mail=null)
     {
-        return HelperInterface::pp($x, $die, $mail);
+        $helper = new HelperTools();
+        return $helper->pp($x, $die, $mail);
     }
 }
 
@@ -37,7 +38,8 @@ if ( ! function_exists('email_exception'))
      */
     function email_exception($errors, $email, $extra = null)
     {
-        return HelperInterface::email_exception($errors, $email, $extra);
+        $helper = new HelperTools();
+        return $helper->email_exception($errors, $email, $extra);
     }
 }
 
@@ -53,7 +55,8 @@ if(!function_exists('objToArray')){
      */
     function objToArray($obj, &$arr = array())
     {
-        return HelperInterface::objToArray($obj, $arr);
+        $helper = new HelperTools();
+        return $helper->objToArray($obj, $arr);
     }
 }
 
@@ -70,7 +73,8 @@ if(!function_exists('create_zip')){
      */
     function create_zip($files = array(), $destination = '', $overwrite = false)
     {
-        return HelperInterface::create_zip($files, $destination, $overwrite);
+        $helper = new HelperTools();
+        return $helper->create_zip($files, $destination, $overwrite);
     }
 }
 
@@ -84,7 +88,8 @@ if(!function_exists('create_temp_csv')){
      * @return void
      */
     function create_temp_csv($csvdata){
-        return HelperInterface::create_temp_csv($csvdata);
+        $helper = new HelperTools();
+        return $helper->create_temp_csv($csvdata);
     }
 }
 
@@ -106,7 +111,8 @@ if( ! function_exists('createmsg'))
      */
     function createmsg($logger, $msg, $log=true, $datestamp=true, $newline=true)
     {
-        return HelperInterface::createmsg($logger, $msg, $log, $datestamp, $newline);
+        $helper = new HelperTools();
+        return $helper->createmsg($logger, $msg, $log, $datestamp, $newline);
     }
 }
 
@@ -120,7 +126,8 @@ if ( ! function_exists('convertPhoneNumber')) {
      */
     function convertPhoneNumber($phone_number)
     {
-        return HelperInterface::convert($phone_number);
+        $helper = new HelperTools();
+        return $helper->convert($phone_number);
     }
 }
 
@@ -135,7 +142,8 @@ if ( ! function_exists('remove_namespace_from_class_name')) {
      */
     function remove_namespace_from_class_name($model)
     {
-        return HelperInterface::remove_namespace_from_class_name($model);
+        $helper = new HelperTools();
+        return $helper->remove_namespace_from_class_name($model);
     }
 }
 
@@ -147,7 +155,8 @@ if ( ! function_exists('search_operators')) {
      */
     function search_operators()
     {
-        return HelperInterface::search_operators();
+        $helper = new HelperTools();
+        return $helper->search_operators();
     }
 }
 
@@ -162,7 +171,8 @@ if ( ! function_exists('array_values_to_keys')) {
      */
     function array_values_to_keys($array)
     {
-        return HelperInterface::array_values_to_keys($array);
+        $helper = new HelperTools();
+        return $helper->array_values_to_keys($array);
     }
 }
 
@@ -179,7 +189,8 @@ if ( ! function_exists('convert_state')) {
      */
     function convert_state($name, $to='abbrev')
     {
-        return HelperInterface::convert_state($name, $to);
+        $helper = new HelperTools();
+        return $helper->convert_state($name, $to);
     }
 }
 
@@ -191,7 +202,8 @@ if (!function_exists('timestamp')) {
      */
     function timestamp()
     {
-        return HelperInterface::timestamp();
+        $helper = new HelperTools();
+        return $helper->timestamp();
     }
 }
 
@@ -209,7 +221,8 @@ if ( ! function_exists('null_or_empty')) {
      * @return boolean
      */
     function null_or_empty($value) {
-        return HelperInterface::null_or_empty($value);
+        $helper = new HelperTools();
+        return $helper->null_or_empty($value);
     }
 }
 
@@ -225,7 +238,8 @@ if(! function_exists('return_keys_value_if_exists'))
     */
     function return_keys_value_if_exists($key, array $array_to_search)
     {
-        return HelperInterface::return_keys_value_if_exists($key, $array_to_search);
+        $helper = new HelperTools();
+        return $helper->return_keys_value_if_exists($key, $array_to_search);
     }
 }
 
@@ -242,8 +256,9 @@ if(! function_exists('sort_multi_array_by_key'))
      * @return array
      */
     function sort_multi_array_by_key(array $array, $key, $order = SORT_ASC)
-    {   
-        return HelperInterface::sort_multi_array_by_key($array, $key, $order);
+    {
+        $helper = new HelperTools();
+        return $helper->sort_multi_array_by_key($array, $key, $order);
     }
 }
 
@@ -262,6 +277,7 @@ if(! function_exists('objToArray'))
      */
     function objToArray($obj, &$arr = array())
     {
-        return HelperInterface::objToArray($obj, $arr);
+        $helper = new HelperTools();
+        return $helper->objToArray($obj, $arr);
     }
 }
