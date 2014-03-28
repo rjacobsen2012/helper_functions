@@ -127,7 +127,7 @@ if ( ! function_exists('convertPhoneNumber')) {
     function convertPhoneNumber($phone_number)
     {
         $helper = new HelperTools();
-        return $helper->convert($phone_number);
+        return $helper->convertPhoneNumber($phone_number);
     }
 }
 
