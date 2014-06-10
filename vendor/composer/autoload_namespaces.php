@@ -6,10 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WebDriver' => array($vendorDir . '/instaclick/php-webdriver/lib'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\Stopwatch\\' => array($vendorDir . '/symfony/stopwatch'),
-    'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
@@ -18,22 +16,17 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Symfony\\Component\\Config\\' => array($vendorDir . '/symfony/config'),
     'Symfony\\Component\\BrowserKit\\' => array($vendorDir . '/symfony/browser-kit'),
-    'Selenium' => array($vendorDir . '/alexandresalome/php-selenium/src'),
     'Satooshi\\Component' => array($vendorDir . '/satooshi/php-coveralls/src'),
     'Satooshi\\Bundle' => array($vendorDir . '/satooshi/php-coveralls/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
-    'PhpAmqpLib' => array($vendorDir . '/videlalvaro/php-amqplib'),
     'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),
     'Normalizer' => array($vendorDir . '/patchwork/utf8/class'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Hot' => array($vendorDir . '/hot/phpunit-runner/src'),
     'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
     'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
-    'Goutte' => array($vendorDir . '/fabpot/goutte'),
     'Faker\\PHPUnit' => array($vendorDir . '/fzaninotto/faker/test'),
     'Faker' => array($vendorDir . '/fzaninotto/faker/src'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Codeception' => array($vendorDir . '/codeception/codeception/src'),
-    'Behat\\Mink\\Driver' => array($vendorDir . '/behat/mink-zombie-driver/src', $vendorDir . '/behat/mink-selenium-driver/src', $vendorDir . '/behat/mink-selenium2-driver/src', $vendorDir . '/behat/mink-browserkit-driver/src', $vendorDir . '/behat/mink-goutte-driver/src'),
-    'Behat\\Mink' => array($vendorDir . '/behat/mink/src'),
 );

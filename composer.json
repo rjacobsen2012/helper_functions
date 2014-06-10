@@ -22,8 +22,8 @@
     },    
     "require": {
         "php": ">=5.4.0",
-        "codeception/codeception": "1.6.*@dev",
-        "fzaninotto/faker": "1.4.*@dev",
+        "codeception/codeception": "2.0.*@dev",
+        "fzaninotto/faker": "1.5.*@dev",
         "guzzle/guzzle": "3.8.1",
         "doctrine/inflector": "1.0",
         "patchwork/utf8": "1.1.*"
